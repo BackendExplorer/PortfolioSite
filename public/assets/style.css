@@ -1,4 +1,23 @@
-body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+
+  /* 追加：sticky footer 用 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  /* 追加：余った高さを main が埋める */
+  flex: 1;
+}
+
 .container { max-width: 960px; margin: 0 auto; padding: 16px; }
 .site-header, .site-footer { background: #111; color: #fff; }
 .site-header .container, .site-footer .container { display: flex; align-items: center; justify-content: space-between; }
@@ -12,11 +31,11 @@ body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 16px; }
 .project-card { border: 1px solid #ddd; border-radius: 10px; padding: 12px; overflow: hidden; }
-.project-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; }
+.project-card img { width: 100%; height: 160px; object-fit: contain; background: #fff; border-radius: 8px; display: block; }
 .row { display: flex; gap: 8px; margin-top: 8px; }
 .btn { display: inline-block; padding: 8px 10px; border: 1px solid #222; border-radius: 8px; text-decoration: none; color: #222; }
 .btn:hover { background: #222; color: #fff; }
 
 .muted { color: #666; }
-.hero { width: 100%; max-height: 360px; object-fit: cover; border-radius: 10px; margin: 10px 0; }
+.hero { width: 100%; max-height: 360px; object-fit: contain; background: #fff; border-radius: 10px; margin: 10px 0; display: block; }
 .content { white-space: pre-wrap; background: #f6f6f6; padding: 12px; border-radius: 10px; }
